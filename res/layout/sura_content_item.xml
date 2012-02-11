@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+		android:id="@+id/ayareadstatus"
+	    android:layout_width="15sp"
+	    android:layout_height="fill_parent"
+	    android:textColor="#A4C639"
+	    android:gravity="left"
+	    
+	    />
+    
+    <TextView
+		android:id="@+id/ayanumber"
+	    android:layout_width="20sp"
+	    android:layout_height="fill_parent"
+	    android:gravity="center"
+	    
+	    />
+    
+	<TextView
+		android:id="@+id/aya"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="right"
+	    android:textSize="25sp"
+	    />
+
+</LinearLayout>

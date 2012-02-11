@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="4dp">	
+
+	<TextView
+		android:id="@+id/stattitle"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:textColor="#dc6800"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="3sp"
+        android:text="Statistik Bacaan"
+	    />
+	
+	<LinearLayout
+	    android:id="@+id/statfieldtitle" 
+	    android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/stattitle">
+	    
+	    <TextView
+		android:id="@+id/numstattitle"
+	    android:layout_width="30sp"
+	    android:layout_height="wrap_content"
+	    android:text="No."	    
+	    />
+    
+    	<TextView
+		android:id="@+id/suranamestattitle"
+	    android:layout_width="200sp"
+	    android:layout_height="wrap_content"
+	    android:text="Surat" 	    
+	    android:gravity="center"
+	    />
+       
+			
+		<TextView
+		android:id="@+id/ayacounttitle"
+	    android:layout_width="60sp"
+	    android:layout_height="wrap_content"
+	    android:text="Progress Bacaan"
+	    android:gravity="center"	    
+	    />
+	
+		
+	    
+	</LinearLayout>
+	       
+
+	<ListView
+		android:id="@+id/listsurastat"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_below="@+id/statfieldtitle"
+		android:drawSelectorOnTop="false"/>
+
+</RelativeLayout>

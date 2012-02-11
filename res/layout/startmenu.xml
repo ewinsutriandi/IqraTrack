@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">	
+     	<TextView
+			android:id="@+id/welcometx"
+			android:text="IqraTrack for Android"
+	    	android:textSize="25sp"
+	    	android:textColor="#dc6800"
+	    	android:textStyle="bold"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"	
+		/>
+		<TextView
+			android:id="@+id/welcomesubt"
+			android:text="Ngajinya udah sampai mana?"
+			android:layout_width="fill_parent"
+			android:textStyle="italic"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+		/>        
+    
+    <FrameLayout 
+    	android:layout_width="350sp"
+        android:layout_height="20sp"
+        android:layout_x="40px"
+        android:layout_y="35px">
+       
+    </FrameLayout>
+			
+	<Button
+		android:id="@+id/startfrlastmn"
+		android:text="Mulai dari Bacaan Terakhir"
+		android:layout_width="200sp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		
+		/>
+	<Button
+		android:id="@+id/suraindexmn"
+		android:text="Indeks Surat"
+		android:layout_width="200sp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		
+		/>
+	<Button
+		android:id="@+id/statsmn"
+		android:text="Statistik Bacaan"
+		android:layout_width="200sp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_below="@+id/suraindexmn"
+		/>
+	<Button
+		android:id="@+id/settingmn"
+		android:text="Konfigurasi"
+		android:layout_width="200sp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_below="@+id/statsmn"
+		/>
+	<Button
+		android:id="@+id/aboutmn"
+		android:text="Tentang Aplikasi"
+		android:layout_width="200sp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_below="@+id/settingmn"
+		/>
+
+</LinearLayout>

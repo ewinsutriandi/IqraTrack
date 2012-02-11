@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/mnstartfrlast"
+        android:title="Ayat Terakhir Dibaca">
+    </item>
+    <item
+        android:id="@+id/mnsuraindex"
+        android:title="Indeks Surat">
+    </item>
+    <item
+        android:id="@+id/mnstatistic"
+        android:title="Statistik Bacaan">
+    </item>
+    <item
+        android:id="@+id/mnsetting"
+        android:title="Konfigurasi"/>
+    <item
+        android:id="@+id/mnabout"
+        android:title="Tentang Aplikasi"/>
+
+</menu>
