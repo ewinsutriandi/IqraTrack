@@ -48,10 +48,10 @@ public class SuraContentAct extends BaseActivity {
         		onListItemClick(list, view, position, index);
             }
 		});
-        boolean fromlastaya = getIntent().getBooleanExtra("fromlastaya", false);
-        if (fromlastaya){
+        //boolean fromlastaya = getIntent().getBooleanExtra("fromlastaya", false);
+        //if (fromlastaya){
         	scrollToLastRead();
-        }
+        //}
 
     }
 
@@ -59,7 +59,7 @@ public class SuraContentAct extends BaseActivity {
     	TextView tx = (TextView) findViewById(R.id.surameta);
     	tx.setGravity(Gravity.CENTER);
     	String surainfo;
-    	surainfo = sura.getTname()+" "+sura.getType()+" "+sura.getAyas()+" ayat";
+    	surainfo = sura.getTname()+" "+sura.getAyas()+" ayat";
         tx.setText(surainfo);
     }
 
