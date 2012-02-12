@@ -42,7 +42,7 @@ public class SuraContentArrayAdapter extends ArrayAdapter<String>{
 			TextView tAyaNum = (TextView) v.findViewById(R.id.ayanumber);
 			TextView tAyaSt = (TextView) v.findViewById(R.id.ayareadstatus);
 			tAya = ArabicUtilities.getArabicEnabledTextView(ctx, tAya);
-			tAyaSt = ArabicUtilities.getArabicEnabledTextView(ctx, tAyaSt);
+			//tAyaSt = ArabicUtilities.getArabicEnabledTextView(ctx, tAyaSt);
 			String[] ayarray = aya.split ("\\|");
 			//split bismillah in 1st aya, except for al fatihah and at-taubah
 			if (position==0&&(sura.getIdx()!=1&&sura.getIdx()!=9)){
@@ -59,7 +59,7 @@ public class SuraContentArrayAdapter extends ArrayAdapter<String>{
 			int ayaReadStatus = Integer.parseInt(app.getTracker().getAyasReadCount()[ayapos]);
 			if (ayaReadStatus>0){
 				tAyaSt.setText("\u2713");
-				tAyaSt.setGravity(Gravity.BOTTOM);
+				//tAyaSt.setGravity(Gravity.BOTTOM);
 			}
 			else{
 				tAyaSt.setText("");

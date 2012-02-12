@@ -1,5 +1,6 @@
 package com.memelabs.iqratrack;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import org.arabic.ArabicUtilities;
@@ -44,9 +45,10 @@ public class SuraStatisticArrayAdapter extends ArrayAdapter<SuraEntity>{
 			tsname = ArabicUtilities.getArabicEnabledTextView(ctx, tsname);
 			tsname.setText(ArabicUtilities.reshapeSentence(sura.getName()));
 			tstname.setText(sura.getTname());
-			Float pctprogress = 100 * (float) (ayaread/ayacnt);
-			String pctprogressformatted = String.format("%.2g%n", pctprogress);
-			tsayacnt.setText(pctprogressformatted + "%");
+			Float pctprogress =  100 * ((float)(ayaread)/(float)(ayacnt));
+			DecimalFormat df = new DecimalFormat("###");
+			String pctprogressformatted = df.format(pctprogress)+"%";
+			tsayacnt.setText(pctprogressformatted);
 			//tsayaread.setText(Integer.toString(ayaread));
 			
 		}
