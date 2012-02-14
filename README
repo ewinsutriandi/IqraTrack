@@ -3,6 +3,10 @@ About Iqra Track Application
 This software is a Qur'an Reader for Android OS that can automatically track your reading progress as you tap each verses (aya).
 Currently it is only available in Indonesian and does not support multiple translations (future versions will have those insha Allah).
 This software is released under GPL v2 license and its source can be accessed at https://github.com/meongmelong/IqraTrack
+
+Already Tested On:
+1. Android Froyo 2.2
+
 CREDITS
 1. Raw quranic text : tanzil.net
 2. Arabic Reshaper and Utilities for Android by  Ahmed Essam Naiem, Amr Gawish et. al.
