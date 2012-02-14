@@ -6,7 +6,7 @@
     >
     <TextView
 		android:id="@+id/ayareadstatus"
-	    android:layout_width="15sp"
+	    android:layout_width="15dip"
 	    android:layout_height="fill_parent"
 	    android:textColor="#A4C639"
 	    android:gravity="center"
@@ -15,7 +15,7 @@
     
     <TextView
 		android:id="@+id/ayanumber"
-	    android:layout_width="20sp"
+	    android:layout_width="20dip"
 	    android:layout_height="fill_parent"
 	    android:gravity="center"
 	    
@@ -25,7 +25,6 @@
 		android:id="@+id/aya"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:gravity="right"
 	    android:textSize="25sp"
 	    />
 

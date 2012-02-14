@@ -2,6 +2,8 @@ package com.memelabs.iqratrack;
 
 import java.util.ArrayList;
 
+import org.arabic.ArabicUtilities;
+
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -38,6 +40,9 @@ public class SuraContentAct extends BaseActivity {
         ayas = qr.getSuraContentsInArrayList(suraidx);
         sura = app.getCurrentSura();
         displaySuraInfo();
+        if (sura.getIdx()!=1&&sura.getIdx()!=9){
+        	displayBismillah();
+        }
         adapter = new SuraContentArrayAdapter(this, R.layout.sura_content_item,ayas,sura);
 		list = (ListView) findViewById(R.id.listaya);
 		list.setAdapter(adapter);
@@ -48,10 +53,7 @@ public class SuraContentAct extends BaseActivity {
         		onListItemClick(list, view, position, index);
             }
 		});
-        //boolean fromlastaya = getIntent().getBooleanExtra("fromlastaya", false);
-        //if (fromlastaya){
-        	scrollToLastRead();
-        //}
+        scrollToLastRead();
 
     }
 
@@ -59,9 +61,16 @@ public class SuraContentAct extends BaseActivity {
     	TextView tx = (TextView) findViewById(R.id.surameta);
     	tx.setGravity(Gravity.CENTER);
     	String surainfo;
-    	surainfo = sura.getTname()+" "+sura.getAyas()+" ayat";
+    	surainfo = sura.getEname()+" "+sura.getTname()+" "+sura.getAyas()+" ayat";
         tx.setText(surainfo);
     }
+
+	private void displayBismillah() {
+		TextView tx = (TextView) findViewById(R.id.surabismillah);
+		tx = ArabicUtilities.getArabicEnabledTextView(getApplicationContext(), tx);
+        String bism = ArabicUtilities.reshapeSentence(QuranReader.BISMILLAH); 
+		tx.setText(bism);
+	}
 
 	protected void onListItemClick(ListView list, View view, int position,
 			long index) {

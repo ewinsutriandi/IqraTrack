@@ -3,15 +3,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingTop="4px">	
+    android:paddingTop="4dp">	
 
-	<include android:id="@+id/search" layout="@layout/search" />
 
 	<ListView
 		android:id="@+id/listsura"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		android:layout_below="@id/search"
 		android:drawSelectorOnTop="false"/>
 
 </RelativeLayout>

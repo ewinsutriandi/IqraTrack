@@ -102,6 +102,11 @@ public class Tracker {
 		if (!file.exists()){
 			file.delete();
 		}
-		createTrackerFile(ctx);	
+		createTrackerFile(ctx);
+		try {
+			loadProgress(ctx);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

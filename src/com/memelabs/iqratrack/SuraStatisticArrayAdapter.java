@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.arabic.ArabicUtilities;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public class SuraStatisticArrayAdapter extends ArrayAdapter<SuraEntity>{
 			DecimalFormat df = new DecimalFormat("###");
 			String pctprogressformatted = df.format(pctprogress)+"%";
 			tsayacnt.setText(pctprogressformatted);
-			//tsayaread.setText(Integer.toString(ayaread));
+			System.out.println(tsname.getGravity()+":"+Gravity.RIGHT);
 			
 		}
 		return v;

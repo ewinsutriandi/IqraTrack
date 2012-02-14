@@ -21,15 +21,10 @@
 			android:textStyle="italic"
 			android:layout_height="wrap_content"
 			android:gravity="center"
+			android:layout_marginBottom="10dip"
 		/>        
     
-    <FrameLayout 
-    	android:layout_width="350sp"
-        android:layout_height="20sp"
-        android:layout_x="40px"
-        android:layout_y="35px">
-       
-    </FrameLayout>
+
 			
 	<Button
 		android:id="@+id/startfrlastmn"
@@ -53,7 +48,7 @@
 		android:layout_width="200sp"
 		android:layout_height="wrap_content"
 		android:gravity="center"
-		android:layout_below="@+id/suraindexmn"
+		
 		/>
 	<Button
 		android:id="@+id/settingmn"
@@ -61,7 +56,7 @@
 		android:layout_width="200sp"
 		android:layout_height="wrap_content"
 		android:gravity="center"
-		android:layout_below="@+id/statsmn"
+		
 		/>
 	<Button
 		android:id="@+id/aboutmn"
@@ -69,7 +64,7 @@
 		android:layout_width="200sp"
 		android:layout_height="wrap_content"
 		android:gravity="center"
-		android:layout_below="@+id/settingmn"
+		
 		/>
 
 </LinearLayout>

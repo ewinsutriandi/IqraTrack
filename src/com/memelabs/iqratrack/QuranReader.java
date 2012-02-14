@@ -17,6 +17,9 @@ public class QuranReader {
 	
 	private static String QURAN_SRC_FILE = "quransimple.png"; 
 	private static String QURAN_META_FILE = "qurandata.xml";
+	private static String QURAN_META_FILE_LANG = "quran-properties-";
+	public static String lang;
+	public static String BISMILLAH = "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ";
 	private String[] quranContents = new String[6236];
 	private ArrayList<SuraEntity> suraDatas = new ArrayList<SuraEntity>();
 	
@@ -24,6 +27,7 @@ public class QuranReader {
 		super();
 		try {
 			initSuraDatas(ctx);
+			initSuraDatasByLang(ctx, "id");
 			quranCtnToArray(ctx);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -63,6 +67,7 @@ public class QuranReader {
 		return suraContents;
 	}
 	private void initSuraDatas(Context ctx) throws IOException, XmlPullParserException{
+		this.suraDatas.clear();
 		XmlPullParser parser = Xml.newPullParser();
 		InputStream in; 
 		in = ctx.getResources().getAssets().open(QURAN_META_FILE);
@@ -103,8 +108,59 @@ public class QuranReader {
 	        eventType = parser.next();
 	        }		
 	}
+	private void initSuraDatasByLang(Context ctx, String lang) throws IOException, XmlPullParserException{
+		QuranReader.lang = lang;
+		XmlPullParser parser = Xml.newPullParser();
+		InputStream in; 
+		in = ctx.getResources().getAssets().open(QURAN_META_FILE_LANG+lang+".xml");
+		parser.setInput(in, null);
+		int eventType = parser.getEventType();
+	    SuraEntity currentSura = null;
+	    boolean done = false;
+	    while (eventType != XmlPullParser.END_DOCUMENT && !done){
+	        String name = null;
+	        switch (eventType){
+	            case XmlPullParser.START_DOCUMENT:
+	                break;
+	            case XmlPullParser.START_TAG:
+	                name = parser.getName();
+	                if (name.equalsIgnoreCase("sura")){
+	                	int suraidx = Integer.parseInt(parser.getAttributeValue(0));
+	                    currentSura = getSuraData(suraidx);
+	                    currentSura.setTname(parser.getAttributeValue(1));
+	                    currentSura.setEname(parser.getAttributeValue(2));
+	                }
+	                break;
+	            case XmlPullParser.END_TAG:
+	                name = parser.getName();
+	                if (name.equalsIgnoreCase("suras")){
+	                    done = true;
+	                }
+	                break;
+	            }
+	        eventType = parser.next();
+	        }		
+	}
 	public ArrayList<SuraEntity> getSuraDatas() {
 		return suraDatas;
+	}
+	public boolean checkMD5QuranData(Context ctx){
+		InputStream in; 
+		try {
+			in = ctx.getResources().getAssets().open(QURAN_SRC_FILE);
+			try {
+				String md5 = MD5Checksum.getMD5Checksum(in);
+				if (md5.equals("a6c40218923a239a136bfe1f9fa51df0")){
+					return true;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
 	}
 
 }

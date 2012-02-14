@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class BaseActivity extends Activity{
 	protected Intent intent;
@@ -20,8 +19,8 @@ public class BaseActivity extends Activity{
     	IqraTrackApp app = updateTracker();
     	switch (item.getItemId()) {
         case R.id.mnabout:
-        	Toast.makeText(getApplicationContext(), "", 5);
-        	//startActivity(new Intent(this, About.class));
+        	intent = new Intent(getApplicationContext(), AboutAppAct.class);
+			startActivity(intent);
         return true;
         case R.id.mnstartfrlast:
         	intent = new Intent(getApplicationContext(), SuraContentAct.class);
@@ -37,9 +36,14 @@ public class BaseActivity extends Activity{
         	intent = new Intent(getApplicationContext(), SuraStatisticAct.class);
 			startActivity(intent);
         return true;
+        case R.id.mnsetting:
+        	intent = new Intent(getApplicationContext(), ConfigurationsAct.class);
+    		startActivity(intent);
+        return true;
         default:
         return super.onOptionsItemSelected(item);
         }
+    	
     }
 
 	/**

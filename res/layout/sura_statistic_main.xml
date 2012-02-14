@@ -27,26 +27,28 @@
 	    
 	    <TextView
 		android:id="@+id/numstattitle"
-	    android:layout_width="30sp"
+	    android:layout_width="30dip"
 	    android:layout_height="wrap_content"
 	    android:text="No."	    
 	    />
     
     	<TextView
 		android:id="@+id/suranamestattitle"
-	    android:layout_width="200sp"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="Surat" 	    
 	    android:gravity="center"
+	    android:layout_weight="1"
 	    />
        
 			
 		<TextView
 		android:id="@+id/ayacounttitle"
-	    android:layout_width="60sp"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="Progress Bacaan"
-	    android:gravity="center"	    
+	    android:gravity="center"
+	    android:layout_weight="2"	    
 	    />
 	
 		

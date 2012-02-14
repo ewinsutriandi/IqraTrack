@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, EmployeeList!</string>
+    <string name="hello">Hello Iqra Track Users!</string>
     <string name="app_name">Iqra Track</string>
+    <string name="about_title">Tentang Iqra Track</string>
+    <string name="config_title">Konfigurasi</string>
+    <string name="reset_progress">Reset Progress Bacaan</string>
+    <string name="md5_check">Cek Md5 File Quran</string>
 </resources>

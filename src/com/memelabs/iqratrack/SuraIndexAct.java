@@ -23,7 +23,7 @@ public class SuraIndexAct extends BaseActivity {
     	super.onCreate(savedInstanceState);
         IqraTrackApp app = (IqraTrackApp) getApplicationContext();
     	setContentView(R.layout.sura_list_main);
-        searchText = (EditText) findViewById(R.id.searchText);
+        //searchText = (EditText) findViewById(R.id.searchText);
         qr = app.getQr();
         list = (ListView) findViewById(R.id.listsura);
         list.setOnItemClickListener(new OnItemClickListener() {

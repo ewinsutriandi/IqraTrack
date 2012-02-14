@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">	
+     	<TextView
+			android:id="@+id/configtitle"
+			android:text="@string/config_title"
+	    	android:textSize="25sp"
+	    	android:textColor="#dc6800"
+	    	android:textStyle="bold"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_margin="4dip"	
+		/>
+		      
+    
+	
+	<Button
+		android:id="@+id/resetprogress"
+		android:text="@string/reset_progress"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_margin="4dip"
+		/>
+	
+	<Button
+		android:id="@+id/checkmd5qurandata"
+		android:text="@string/md5_check"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_margin="4dip"
+		/>
+	
+
+</LinearLayout>

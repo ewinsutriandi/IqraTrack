@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 
 public class WelcomeAct extends Activity {
@@ -54,7 +53,8 @@ public class WelcomeAct extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "Setting", Toast.LENGTH_SHORT).show();
+				intent = new Intent(getApplicationContext(), ConfigurationsAct.class);
+				startActivity(intent);
 			}
 		});
 		about = (Button) findViewById(R.id.aboutmn);
@@ -62,7 +62,8 @@ public class WelcomeAct extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "About", Toast.LENGTH_SHORT).show();
+				intent = new Intent(getApplicationContext(), AboutAppAct.class);
+				startActivity(intent);
 			}
 		});
 		
