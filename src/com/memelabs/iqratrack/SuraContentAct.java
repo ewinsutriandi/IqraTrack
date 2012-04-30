@@ -75,7 +75,8 @@ public class SuraContentAct extends BaseActivity {
 	protected void onListItemClick(ListView list, View view, int position,
 			long index) {
 		int ayapos = app.getCurrentSura().getStart()+position;
-		trk.getAyasReadCount()[ayapos]= trk.getAyasReadCount()[ayapos] + 1;
+		//trk.getAyasReadCount()[ayapos]= trk.getAyasReadCount()[ayapos] + 1;
+		trk.increaseReadCount(ayapos);
 		TextView tAyaSt = (TextView) view.findViewById(R.id.ayareadstatus);
 		tAyaSt.setText("\u2713");
 	}

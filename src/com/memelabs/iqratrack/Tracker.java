@@ -63,6 +63,10 @@ public class Tracker {
 		return ayasReadCount;
 		
 	}
+	public void increaseReadCount(int ayapos){
+		int readcount = Integer.parseInt(ayasReadCount[ayapos])+1;
+		ayasReadCount[ayapos]= Integer.toString(readcount);
+	}
 	public void updateTracker(Context ctx) {
 		System.out.println("update tracker data");
 		IqraTrackApp app = (IqraTrackApp) ctx.getApplicationContext();
