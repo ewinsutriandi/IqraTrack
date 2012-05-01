@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 public class BaseActivity extends Activity{
 	protected Intent intent;
+	int cursuraidx;
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.optionmenu, menu);
@@ -28,9 +29,25 @@ public class BaseActivity extends Activity{
 	    	intent.putExtra("suraidx", lastsuraidx);
 	    	startActivity(intent);
         return true;
-        case R.id.mnsuraindex:
-        	intent = new Intent(getApplicationContext(), SuraIndexAct.class);
-			startActivity(intent);
+        case R.id.mnsuraprev:
+        	intent = new Intent(getApplicationContext(), SuraContentAct.class);
+        	cursuraidx = app.getCurrentSura().getIdx();
+        	if (cursuraidx>1) {
+        		intent.putExtra("suraidx", cursuraidx-1);
+			} else {
+				intent.putExtra("suraidx", cursuraidx);
+			}
+	    	startActivity(intent);
+		return true;
+        case R.id.mnsuranext:
+        	intent = new Intent(getApplicationContext(), SuraContentAct.class);
+        	cursuraidx = app.getCurrentSura().getIdx();
+        	if (cursuraidx<114) {
+        		intent.putExtra("suraidx", cursuraidx+1);
+			} else {
+				intent.putExtra("suraidx", cursuraidx);
+			}
+	    	startActivity(intent);
 		return true;
         case R.id.mnstatistic:
         	intent = new Intent(getApplicationContext(), SuraStatisticAct.class);

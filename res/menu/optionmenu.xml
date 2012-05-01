@@ -3,16 +3,23 @@
 
     <item
         android:id="@+id/mnstartfrlast"
-        android:title="Ayat Terakhir Dibaca">
-    </item>
-    <item
-        android:id="@+id/mnsuraindex"
-        android:title="Indeks Surat">
+        android:title="Terakhir Dibaca">
     </item>
     <item
         android:id="@+id/mnstatistic"
         android:title="Statistik Bacaan">
     </item>
+    
+    <item
+        android:id="@+id/mnsuraprev"
+        android:title="Surat Sebelumnya">
+    </item>
+    
+    <item
+        android:id="@+id/mnsuranext"
+        android:title="Surat Selanjutnya">
+    </item>
+    
     <item
         android:id="@+id/mnsetting"
         android:title="Konfigurasi"/>

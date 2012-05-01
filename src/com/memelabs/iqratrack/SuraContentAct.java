@@ -61,7 +61,7 @@ public class SuraContentAct extends BaseActivity {
     	TextView tx = (TextView) findViewById(R.id.surameta);
     	tx.setGravity(Gravity.CENTER);
     	String surainfo;
-    	surainfo = sura.getEname()+" "+sura.getTname()+" "+sura.getAyas()+" ayat";
+    	surainfo = sura.getEname()+" ("+sura.getTname()+") - "+sura.getAyas()+" ayat";
         tx.setText(surainfo);
     }
 
