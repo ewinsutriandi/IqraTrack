@@ -6,9 +6,15 @@ public class IqraTrackApp extends Application{
 	
 	private QuranReader qr;
 	private Tracker trk;
+	private TranslationReader tr;
 	private SuraEntity currentSura;
 	
-	
+	public TranslationReader getTr(){
+		if (tr==null) {
+			tr = new TranslationReader(this.getBaseContext());
+		}
+		return tr;
+	}
 	public void setQr(QuranReader qr) {
 		this.qr = qr;
 	}

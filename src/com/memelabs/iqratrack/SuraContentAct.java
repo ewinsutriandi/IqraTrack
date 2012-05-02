@@ -4,13 +4,18 @@ import java.util.ArrayList;
 
 import org.arabic.ArabicUtilities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SuraContentAct extends BaseActivity {
 
@@ -24,6 +29,7 @@ public class SuraContentAct extends BaseActivity {
     protected int managerId;
     protected QuranReader qr;
 	protected Tracker trk;
+	protected TranslationReader tr;
     protected ListView list;
     protected IqraTrackApp app;
     protected SuraEntity sura;
@@ -35,6 +41,7 @@ public class SuraContentAct extends BaseActivity {
         app = (IqraTrackApp) getApplicationContext();
         qr = app.getQr();
         trk = app.getTracker();
+        tr = app.getTr();
         suraidx = getIntent().getIntExtra("suraidx", 0);
         app.setCurrentSura(qr.getSuraData(suraidx));
         ayas = qr.getSuraContentsInArrayList(suraidx);
@@ -53,11 +60,20 @@ public class SuraContentAct extends BaseActivity {
         		onListItemClick(list, view, position, index);
             }
 		});
+        /*list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
+                System.out.println(pos+" "+id);
+            	return onLongListItemClick(v,pos,id);
+            }
+        });*/
+
         scrollToLastRead();
 
     }
 
-    protected void displaySuraInfo(){
+
+	protected void displaySuraInfo(){
     	TextView tx = (TextView) findViewById(R.id.surameta);
     	tx.setGravity(Gravity.CENTER);
     	String surainfo;
@@ -79,6 +95,21 @@ public class SuraContentAct extends BaseActivity {
 		trk.increaseReadCount(ayapos);
 		TextView tAyaSt = (TextView) view.findViewById(R.id.ayareadstatus);
 		tAyaSt.setText("\u2713");
+		String translation = tr.getSuraTranslations(app.getCurrentSura())[position];
+		System.out.println(translation);
+		Toast.makeText(this.getApplicationContext(), translation, Toast.LENGTH_LONG).show();
+	}
+	
+	protected boolean onLongListItemClick(View v, int position, long id) {
+		//int ayapos = app.getCurrentSura().getStart()+position;
+		String translation = tr.getSuraTranslations(app.getCurrentSura())[position];
+		System.out.println(translation);
+		Toast.makeText(this.getApplicationContext(), translation, Toast.LENGTH_LONG).show();
+		   //TextView trnstxt = (TextView) v.findViewById(R.id.transtext);
+		   //trnstxt.setText(translation);
+		   //PopupWindow m_pw = new PopupWindow( layout,  350,  250,  true);
+		   //m_pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
+		return true;
 	}
 	
     protected void scrollToLastRead(){
