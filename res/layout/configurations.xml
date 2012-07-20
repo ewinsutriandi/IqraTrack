@@ -15,8 +15,19 @@
 			android:gravity="center"
 			android:layout_margin="4dip"	
 		/>
-		      
-    
+
+     	<LinearLayout
+     	    android:layout_width="fill_parent"
+     	    android:layout_height="wrap_content" >
+
+
+     		<CheckBox
+     		    android:id="@+id/checkBox1"
+     		    android:layout_width="wrap_content"
+     		    android:layout_height="wrap_content"
+     		    android:text="@string/activatetranslation" />
+
+     	</LinearLayout>
 	
 	<Button
 		android:id="@+id/resetprogress"

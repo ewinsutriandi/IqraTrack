@@ -11,7 +11,7 @@ import android.content.Context;
 
 public class Tracker {
 	private static String TRACKER_DATA_FILE = "progress.dat"; 
-	private String[] ayasReadCount = new String[6237];//6236 aya of quran + lastline for last sura index
+	private String[] ayasReadCount = new String[6237];//6236 aya of quran + line 6237 for last sura index
 	
 	public Tracker(Context ctx) {
 		super();

@@ -6,4 +6,5 @@
     <string name="config_title">Konfigurasi</string>
     <string name="reset_progress">Reset Progress Bacaan</string>
     <string name="md5_check">Cek Md5 File Quran</string>
+    <string name="activatetranslation">Tampilkan terjemahan tiap ayat diklik</string>
 </resources>

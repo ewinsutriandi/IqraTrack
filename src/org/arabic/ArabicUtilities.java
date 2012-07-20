@@ -33,7 +33,8 @@ public class ArabicUtilities {
          /**
 	 * the path of teh fonts file must be under assets folder
 	 */
-	private static final String FONTS_LOCATION_PATH = "me_quran_volt_newmet.ttf";
+	//private static final String FONTS_LOCATION_PATH = "me_quran_volt_newmet.ttf";
+	private static final String FONTS_LOCATION_PATH = "DroidNaskh-Regular.ttf";
         static Typeface face ;
 
 
@@ -227,7 +228,7 @@ public class ArabicUtilities {
 
 			//Append the space to separate between words
 			//reshapedText.append(" ");
-			reshapedText.append("            ");		//Jaz - Put more space.
+			reshapedText.append("  ");		//Jaz - Put more space.
 		}
 
 		//return the final reshaped whole text
